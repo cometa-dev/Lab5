@@ -1,0 +1,49 @@
+﻿@model Lab5.Models.Schedule
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+ViewData["Title"] = "Create Schedule";
+}
+
+<h1>Create Schedule</h1>
+
+<!-- Ваша форма здесь -->
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group mb-3">
+        <label asp-for="GroupId" class="control-label"></label>
+        <select asp-for="GroupId" class="form-control" asp-items="ViewBag.GroupId">
+            <option value="">-- Select Group --</option>
+        </select>
+        <span asp-validation-for="GroupId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="InstructorId" class="control-label"></label>
+        <select asp-for="InstructorId" class="form-control" asp-items="ViewBag.InstructorId">
+            <option value="">-- Select Instructor --</option>
+        </select>
+        <span asp-validation-for="InstructorId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="ClassroomId" class="control-label"></label>
+        <select asp-for="ClassroomId" class="form-control" asp-items="ViewBag.ClassroomId">
+            <option value="">-- Select Classroom --</option>
+        </select>
+        <span asp-validation-for="ClassroomId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="ClassPeriodId" class="control-label"></label>
+        <select asp-for="ClassPeriodId" class="form-control" asp-items="ViewBag.ClassPeriodId">
+            <option value="">-- Select Time --</option>
+        </select>
+        <span asp-validation-for="ClassPeriodId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</form>
